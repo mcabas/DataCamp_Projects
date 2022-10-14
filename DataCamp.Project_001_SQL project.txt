@@ -1,0 +1,22 @@
+%%sql
+postgresql:///roman
+    
+-- Execute your SQL commands here
+SELECT 
+DISTINCT(UPPER(name)) AS name, 
+LOWER(full_Name) AS full_Name,
+REPLACE(CONCAT(COALESCE(birth_city, 'Unknown'), ', ', COALESCE(birth_province,'Unknown')),'Unknown, Unknown','Unknown') AS birthplace,
+COALESCE((EXTRACT('year' FROM (death::DATE)) - EXTRACT('year' FROM birth::DATE))::varchar(11), 'Unknown') As age,
+COALESCE((EXTRACT('year' FROM reign_end::DATE) - EXTRACT('year' FROM reign_start::DATE))::varchar(11), 'Unknown') AS reign,
+CASE    WHEN cause = 'Assassination' THEN 'Assassination'
+        WHEN cause = 'Natural Causes' THEN 'Natural Causes'
+        WHEN cause = 'Execution' THEN 'Execution'
+        WHEN cause = 'Died in Battle' THEN 'Died in Battle'
+        WHEN cause = 'Suicide' THEN 'Suicide'
+        ELSE 'Other' END AS cod,
+
+era
+
+
+FROM emperors
+ORDER BY name ASC
