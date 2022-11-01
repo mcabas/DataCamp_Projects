@@ -4,5 +4,6 @@ Welcome to my Datacamp Projects Repository, here you will find the solution to d
 
 List of Projects
 
-1. 002_Investigating Netflix Movies and Guest Stars in The Office
-2. 003_GooglePlay
+1. 001_The GitHub History of the Scala Language
+2. 002_Investigating Netflix Movies and Guest Stars in The Office
+3. 003_GooglePlay
