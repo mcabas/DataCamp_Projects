@@ -7,3 +7,4 @@ List of Projects
 1. 001_The GitHub History of the Scala Language
 2. 002_Investigating Netflix Movies and Guest Stars in The Office
 3. 003_GooglePlay
+4. 004_A Visual History of Nobel Prize Winners
